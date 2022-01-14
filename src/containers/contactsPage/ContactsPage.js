@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState} from "react";
 import { TileList } from "../../components/tileList/TileList.js";
 import { ContactForm } from "../../components/contactForm/ContactForm.js";
 
@@ -11,21 +11,21 @@ export const ContactsPage = (props) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
-    if (props.contacts.includes(name)) {
-        alert(`You won't be able to add this contact with ${name} as name since duplicate contacts are not allowed in this form!`);
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         /*
         Add contact info and clear data
         if the contact name is not a duplicate
         */
-        if (!props.contacts.includes(name)) {
+        if (!props.contacts.some((contact) => contact.name === name)) {
             props.addContacts(name, phone, email);
             setName('');
             setPhone('');
             setEmail('');
+        }
+        else {
+            alert(`Contact couldn't be added because a contact with the name "${name}" already exists in contacts`);
+            setName('');
         }
     };
 
@@ -43,7 +43,7 @@ export const ContactsPage = (props) => {
             <hr />
             <section>
                 <h2>Contacts</h2>
-                <TileList contacts={props.contacts} />
+                <TileList list={props.contacts} />
             </section>
         </div>
     );

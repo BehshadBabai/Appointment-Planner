@@ -20,7 +20,7 @@ export const ContactForm = ({
     }
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" value={name} onChange={handleNameChange} />
+            <input type="text" placeholder="Name" value={name} onChange={handleNameChange} required/>
             <input type="tel" placeholder="Phone Number" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$" value={phone} onChange={handlePhoneChange} />
             <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
             <button type="submit">Add</button>

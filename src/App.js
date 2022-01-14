@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
@@ -13,12 +13,12 @@ function App() {
     const [appointments,setAppointments] = useState([]);
 
     const addContacts = (name, phoneNumber, email) => {
-        const contact = { name, phoneNumber, email };
+        const contact = { name: name, phoneNumber: phoneNumber, email: email };
         setContacts((prev) => [contact,...prev]);
     }
 
-    const addAppointments = (title,contact,date,time) => {
-        const appointment = { title, contact, date, time };
+    const addAppointments = (title, contact, date, time) => {
+        const appointment = { title: title, contact: contact, date: date, time: time };
         setAppointments((prev) => [appointment,...prev]);
     }
       
@@ -27,12 +27,6 @@ function App() {
         CONTACTS: "/contacts",
         APPOINTMENTS: "/appointments",
     };
-
-    /*
-    Implement functions to add data to
-    contacts and appointments
-    */
-
   
 
     return (
