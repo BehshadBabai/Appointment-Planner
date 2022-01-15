@@ -1,9 +1,6 @@
 import React from "react";
 
 export const ContactPicker = (props) => {
-    const handleChange = (e) => {
-        props.setContact(e.target.value);
-    }
     return (
         <select onChange={props.handleContactChange} value={props.value}>
             <option key="descriptor" value="">Please Select an Already Added Contact</option>
