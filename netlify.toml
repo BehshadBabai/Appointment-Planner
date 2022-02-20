@@ -1,6 +1,10 @@
 [[redirects]]
-  from = "https://behshad-appointment-planners.netlify.app/*"
+  from = "https://behshad-appointment-planners.netlify.app/contacts/*"
   to = "https://behshad-appointment-planners.netlify.app/"
   status = 301
   force = true
-  
+[[redirects]]
+  from = "https://behshad-appointment-planners.netlify.app/appointments/*"
+  to = "https://behshad-appointment-planners.netlify.app/"
+  status = 301
+  force = true
