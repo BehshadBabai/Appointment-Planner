@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://behshad-appointment-planners.netlify.app/*"
+  to = "https://behshad-flashcards.netlify.app/"
+  status = 301
+  force = true
